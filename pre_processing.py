@@ -47,3 +47,19 @@ class data:
         df1["6개월이내"] = df1["6개월이내"].astype(int)
         df1["1년이내"] = df1["1년이내"].astype(int)
         df1["1년초과"] = df1["1년초과"].astype(int)
+
+
+        # 범죄자의 금전소비 용도 데이터 정제
+
+        df2 = pd.read_csv("./dataset/금전소비용도.csv", encoding='cp949', header=2, thousands=',')
+
+        df2 = df2[df2["분류"] != "계"]
+
+        del df2["No"]
+        del df2["분류"]
+        del df2["원자료"]
+        del df2["분류.1"]
+
+        df2.columns = ["통계년도", "범죄종류", "유흥", "오락", "생활비", "도박", "학비", "증여", "소지중", "기타", "미상"]
+
+        
