@@ -32,13 +32,11 @@ with open("seoul_room_list.txt", "w") as srl:
 
     ------------------------------------------------ '''
 
-# with open("seoul_room_list.txt", "r") as srl:
-
 ROOM_URL = "https://www.peterpanz.com/house/11744125"
 req = requests.get(ROOM_URL)
 html = req.text
 soup = BeautifulSoup(html, "html.parser")
-# print(len(seoul_room_list))
+print(len(seoul_room_list)) # property live data
 
 contract = soup.select("div#contract_type")[0].string
 price = soup.select("tr > td")[5].string.strip()
