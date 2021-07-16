@@ -6,7 +6,7 @@ class data:
     def process():
 
 
-        df = pd.read_csv("./dataset/범죄검거상황.csv", encoding='cp949', header=2)
+        df = pd.read_csv("./dataset/범죄검거상황.csv", encoding='cp949', header=2, thousands=',')
         
         df = df[df["분류.3"] != "보험사기방지특별법"]
         del df["No"]
