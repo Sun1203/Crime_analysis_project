@@ -62,4 +62,41 @@ class data:
 
         df2.columns = ["통계년도", "범죄종류", "유흥", "오락", "생활비", "도박", "학비", "증여", "소지중", "기타", "미상"]
 
-        
+
+        # 범죄자 범행시 정신 상태 정제
+
+        df3 = pd.read_csv("./dataset/범죄자범행시정신상태.csv", encoding='cp949', header=2, thousands=',')
+
+        del df3["No"]
+        del df3["분류"]
+        del df3["분류.1"]
+        del df3["계"]
+        del df3["남자(계)"]
+        del df3["여자(계)"]
+        del df3["정상(남)"]
+        del df3["정상(여)"]
+        del df3["정신이상(소계)"]
+        del df3["정신이상(남)"]
+        del df3["정신이상(여)"]
+        del df3["정신박약(소계)"]
+        del df3["정신박약(남)"]
+        del df3["정신박약(여)"]
+        del df3["기타정신장애(소계)"]
+        del df3["기타정신장애(남)"]
+        del df3["기타정신장애(여)"]
+        del df3["주취(남)"]
+        del df3["주취(여)"]
+        del df3["월경시이상"]
+
+        df3 = df3[df3["자료시점"] != "자료시점"]
+        df3.columns = ['발생년도', '범죄종류', '정상', '정신장애', '주취', '미상']
+
+        df3["정상"] = df3["정상"].apply(lambda x: x.replace(',', ''))
+        df3["정신장애"] = df3["정신장애"].apply(lambda x: x.replace(',', ''))
+        df3["주취"] = df3["주취"].apply(lambda x: x.replace(',', ''))
+        df3["미상"] = df3["미상"].apply(lambda x: x.replace(',', ''))
+
+        df3["정상"] = df3["정상"].astype(int)
+        df3["정신장애"] = df3["정신장애"].astype(int)
+        df3["주취"] = df3["주취"].astype(int)
+        df3["미상"] = df3["미상"].astype(int)
