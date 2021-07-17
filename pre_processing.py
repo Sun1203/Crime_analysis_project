@@ -25,6 +25,8 @@ class data:
         df["미상"] = df["미상"].astype(int)
         df["검거율(%)"] = df["검거율(%)"].round(3)
 
+        df.to_csv("./dataset/crime_circumstance.csv", index=False)
+
         # 범죄 검거까지 기간 데이터 정제
 
         df1 = pd.read_csv("./dataset/범죄검거기간.csv", encoding='cp949', header=2, thousands=',')
@@ -49,6 +51,9 @@ class data:
         df1["1년초과"] = df1["1년초과"].astype(int)
 
 
+        df1.to_csv("./dataset/crime_duringday.csv", index=False)
+
+
         # 범죄자의 금전소비 용도 데이터 정제
 
         df2 = pd.read_csv("./dataset/금전소비용도.csv", encoding='cp949', header=2, thousands=',')
@@ -61,6 +66,9 @@ class data:
         del df2["분류.1"]
 
         df2.columns = ["통계년도", "범죄종류", "유흥", "오락", "생활비", "도박", "학비", "증여", "소지중", "기타", "미상"]
+
+        df2.to_csv("./dataset/crime_money.csv", index=False)
+
 
 
         # 범죄자 범행시 정신 상태 정제
@@ -102,6 +110,9 @@ class data:
         df3["미상"] = df3["미상"].astype(int)
 
 
+        df3.to_csv("./dataset/crime_mental.csv", index=False)
+
+
         # 범죄자 성별 데이터 정제
 
         df4 = pd.read_csv("./dataset/범죄자성.csv", encoding='cp949', header=2, thousands=',')
@@ -114,6 +125,9 @@ class data:
 
         df4.columns = ['발생년도', '범죄종류', '남자', '여자', '미상']
         
+
+        df4.to_csv("./dataset/crime_sex.csv", index=False)
+
 
         # 범죄자 전과 정보 데이터 정제
 
@@ -129,6 +143,9 @@ class data:
         df5.columns = ['자료통계', '범죄종류', '전과없음', '전과1범', '전과2범', '전과3범', '전과4범', '전과5범', '전과6범', '전과7범', '전과8범', '전과9범이상', '미상']
 
 
+        df5.to_csv("./dataset/crime_conviction.csv", index=False)
+
+
         # 피해자 연령 데이터 정제
 
         df6 = pd.read_csv("./dataset/피해자성별연령.csv", encoding='cp949', header=3, thousands=',')
@@ -142,7 +159,7 @@ class data:
         del df6["원자료.23"]
         del df6["원자료"]
 
-        df6.columns = ['통계년도', '범죄종류', '남자6세이하', '남자12세이하', '남자15세이하', '남자20세이하', '남자30세이하', '남자40세이하', '남자50세이하','남자60세이하', '남자60세초과', '미상', '여자6세이하', '여자12세이하', '여자15세이하', '여자20세이하', '여자30세이하', '여자40세이하', '여자50세이하', '여자60세이하', '여자60세초과', '여자미상']
+        df6.columns = ['통계년도', '범죄종류', '남자6세이하', '남자12세이하', '남자15세이하', '남자20세이하', '남자30세이하', '남자40세이하', '남자50세이하','남자60세이하', '남자60세초과', '남자미상', '여자6세이하', '여자12세이하', '여자15세이하', '여자20세이하', '여자30세이하', '여자40세이하', '여자50세이하', '여자60세이하', '여자60세초과', '여자미상']
 
         df6["6세이하"] = df6["남자6세이하"] + df6["여자6세이하"] 
         df6["12세이하"] = df6["남자12세이하"] + df6["여자12세이하"]
@@ -177,6 +194,9 @@ class data:
         del df6["여자미상"]
 
 
+        df6.to_csv("./dataset/crime_age.csv", index=False)
+        
+
         # 범죄자와 피해자의 관계 데이터 정제
 
         df7 = pd.read_csv("./dataset/범죄자와피해자의관계.csv", encoding='cp949', header=2, thousands=',')
@@ -189,6 +209,10 @@ class data:
         df7.columns = ['통계년도', '범죄종류', '합계','국가', '공무원', '고용자', '피고용자', '직장동료', '친구', '애인', '동거친족', '기타친족', '거래상대방', '이웃', '지인', '타인', '기타', '미상']
 
 
+        df7.to_csv("./dataset/crime_relation.csv", index=False)
+
+
+
         # 범죄발생시간 데이터 정제
 
         df8 = pd.read_csv("./dataset/범죄발생시간.csv", encoding='cp949', header=2, thousands=',')
@@ -199,4 +223,21 @@ class data:
 
         df8.columns = ['통계년도', '범죄종류', '합계', '00:00~02:59', '03:00~05:59', '06:00~08:59', '09:00~11:59', '12:00~ 14:59', '15:00~17:59', '18:00~20:59', '21:00~23:59', '미상']
 
-        
+
+        df8.to_csv("./dataset/crime_time.csv", index=False)
+
+
+        # 범죄발생 장소 데이터 정제
+
+        df9 = pd.read_csv("./dataset/범죄발생장소.csv", encoding='cp949', header=2, thousands=',')
+
+        del df9['No']
+        del df9['분류']
+        del df9['분류.1']
+
+        df9.columns = ['통계년도', '범죄종류', '합계', '아파트', '단독주택', '고속도로', '노상', '상점', '시장노점', '숙밥업소 목욕탕', '유흥접객업소', '사무실', '공장', '공사장광산', '창고', '역대합실', '지하철', '기타교통수단내', '흥행장', '유원지', '학교', '금융기관', '의료기관', '종교기관', '산야', '해상', '부대', '구금장소', '공지', '기타']
+
+
+        df7.to_csv("./dataset/crime_place.csv", index=False)
+
+    process()
