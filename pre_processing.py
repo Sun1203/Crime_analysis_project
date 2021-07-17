@@ -100,3 +100,19 @@ class data:
         df3["정신장애"] = df3["정신장애"].astype(int)
         df3["주취"] = df3["주취"].astype(int)
         df3["미상"] = df3["미상"].astype(int)
+
+
+        # 범죄자 성별 데이터 정제
+
+        df4 = pd.read_csv("./dataset/범죄자성.csv", encoding='cp949', header=2, thousands=',')
+
+        del df4["No"]
+        del df4["분류"]
+        del df4["분류.1"]
+        del df4["원자료"]
+        del df4["원자료.4"]
+
+        df4.columns = ['발생년도', '범죄종류', '남자', '여자', '미상']
+        
+
+        
