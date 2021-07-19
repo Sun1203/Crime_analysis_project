@@ -32,7 +32,7 @@ class data:
         df.loc[df['통계년도']=='2018년', '통계년도']='2018-01-01'
         df.loc[df['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df.to_csv("./dataset/crime_circumstance.csv", index=False, header=False)
+        df.to_csv("./dataset/crime_circumstance.csv", index=False)
 
         # 범죄 검거까지 기간 데이터 정제
 
