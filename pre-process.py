@@ -65,7 +65,7 @@ class data:
         df1.loc[df1['통계년도']=='2019년', '통계년도']='2019-01-01'
 
 
-        df1.to_csv("./dataset/crime_duringday.csv", index=False, header=False)
+        df1.to_csv("./dataset/crime_duringday.csv", index=False)
 
 
         # 범죄자의 금전소비 용도 데이터 정제
@@ -89,7 +89,7 @@ class data:
         df2.loc[df2['통계년도']=='2018년', '통계년도']='2018-01-01'
         df2.loc[df2['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df2.to_csv("./dataset/crime_money.csv", index=False, header=False)
+        df2.to_csv("./dataset/crime_money.csv", index=False)
 
 
 
@@ -139,7 +139,7 @@ class data:
         df3.loc[df3['통계년도']=='2019년', '통계년도']='2019-01-01'
 
 
-        df3.to_csv("./dataset/crime_mental.csv", index=False, header=False)
+        df3.to_csv("./dataset/crime_mental.csv", index=False)
 
 
         # 범죄자 성별 데이터 정제
@@ -163,7 +163,7 @@ class data:
         df4.loc[df4['통계년도']=='2019년', '통계년도']='2019-01-01'
         
 
-        df4.to_csv("./dataset/crime_sex.csv", index=False, header=False)
+        df4.to_csv("./dataset/crime_sex.csv", index=False)
 
 
         # 범죄자 전과 정보 데이터 정제
@@ -187,7 +187,7 @@ class data:
         df5.loc[df5['통계년도']=='2018년', '통계년도']='2018-01-01'
         df5.loc[df5['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df5.to_csv("./dataset/crime_conviction.csv", index=False, header=False)
+        df5.to_csv("./dataset/crime_conviction.csv", index=False)
 
 
         # 피해자 연령 데이터 정제
@@ -246,7 +246,7 @@ class data:
         df6.loc[df6['통계년도']=='2019년', '통계년도']='2019-01-01'
 
 
-        df6.to_csv("./dataset/crime_age.csv", index=False, header=False)
+        df6.to_csv("./dataset/crime_age.csv", index=False)
         
 
         # 범죄자와 피해자의 관계 데이터 정제
@@ -269,7 +269,7 @@ class data:
         df7.loc[df7['통계년도']=='2019년', '통계년도']='2019-01-01'
 
 
-        df7.to_csv("./dataset/crime_relation.csv", index=False, header=False)
+        df7.to_csv("./dataset/crime_relation.csv", index=False)
 
 
 
@@ -291,7 +291,7 @@ class data:
         df8.loc[df8['통계년도']=='2018년', '통계년도']='2018-01-01'
         df8.loc[df8['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df8.to_csv("./dataset/crime_time.csv", index=False, header=False)
+        df8.to_csv("./dataset/crime_time.csv", index=False)
 
 
         # 범죄발생 장소 데이터 정제
@@ -311,6 +311,6 @@ class data:
         df9.loc[df9['통계년도']=='2018년', '통계년도']='2018-01-01'
         df9.loc[df9['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df9.to_csv("./dataset/crime_place.csv", index=False, header=False)
+        df9.to_csv("./dataset/crime_place.csv", index=False)
 
     process()
