@@ -23,4 +23,10 @@
    > 테스트 후 보안등급별로 지도에 시각화 진행
 
 - 20210719 작업내용
-   > kibana maps 활용, 보안점수별로 등급 분류 후 방 추천 및 보안 위험등급의 방 시각화
+   > kibana maps 활용, 보안점수별로 등급 분류 후 방 추천 및 보안 위험등급의 방 geo-point mapping<br>
+   > kibana dashboard와 'map.html' 연동<br><br>
+<a href='https://ifh.cc/v-wVAq9r' target='_blank'><img src='https://ifh.cc/g/wVAq9r.gif' border='0'></a>  　*map.gif*<br>
+
+- 20210720 작업내용
+   > app.py 및 map.html 구성
+
