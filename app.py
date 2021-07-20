@@ -14,7 +14,8 @@ def about():
     if request.method == "GET":
         return render_template('info.html')
     else:
-        pass
+        return '{"img01" : "http://localhost:5601/goto/4e2f2500e329c0f15171caf2d6b68290"}'
+
 
 @app.route('/join', methods=['GET','POST'])
 def join():
