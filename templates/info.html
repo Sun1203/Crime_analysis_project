@@ -1,35 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <button onclick="view()">클릭</button>
-    <br><hr><br>
-    <div id="dataview"></div>
-<script>
-    function view() {
-        const xhttp = new XMLHttpRequest();
-        
-        xhttp.open("POST", "/info");
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send();
 
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                data = this.responseText;
-                data = JSON.parse(data)
-                console.log(data);
-                
-                document.getElementById("dataview").innerHTML = '<iframe src="'+data.img01+'">';
-                console.log(dataview)
+<body>
+    <button onclick="view()">범죄 피해자 분석</button>
+    <button onclick="view1()">범죄 검거와 발생 분석</button>
+
+    <br>
+    <hr><br>
+    <div id="dataview"></div>
+    <script>
+        function view() {
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.open("POST", "/info");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = this.responseText;
+                    data = JSON.parse(data)
+                    console.log(data);
+
+                    document.getElementById("dataview").innerHTML = '<iframe src="' + data.img01 + '", height="600" width="800">';
+                    console.log(dataview)
+                }
             }
         }
-    }
-    
-</script>
+
+
+
+
+
+
+        function view1() {
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.open("POST", "/info1");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = this.responseText;
+                    data = JSON.parse(data)
+                    console.log(data);
+
+                    document.getElementById("dataview").innerHTML = '<iframe src="' + data.img02 + '", height="600" width="800">';
+                    console.log(dataview)
+                }
+            }
+        }
+
+
+
+        
+    </script>
 </body>
+
 </html>

@@ -13,13 +13,23 @@ def index():
 def about():
     if request.method == "GET":
         return render_template('info.html')
-    else:
-        return '{"img01" : "http://localhost:5601/goto/4e2f2500e329c0f15171caf2d6b68290"}'
 
+        # <iframe src="http://localhost:5601/goto/9bc00ce7159558ceb9864d06d845b86f" height="600" width="800"></iframe>
+    elif request.method == "POST":
+        return '{"img01" : "http://localhost:5601/goto/9bc00ce7159558ceb9864d06d845b86f"}'
+
+@app.route('/info1', methods=['GET', 'POST'])
+def about1():
+
+        # <iframe src="http://localhost:5601/goto/e660241fa417e58a78414d910c158ac0" height="600" width="800"></iframe>
+    if request.method == "POST":
+        return '{"img02" : "http://localhost:5601/goto/e660241fa417e58a78414d910c158ac0"}'
 
 @app.route('/join', methods=['GET','POST'])
 def join():
     return render_template('join.html')
+
+
 
 
 
