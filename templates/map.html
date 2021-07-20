@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,31 +8,33 @@
     <title>C-Bang</title>
 </head>
 
-<style>
-    .map .mask {
-    width: 100%;
-    height: 100%;
-}
+<style>    
     div {
         color: aliceblue;
     }
 
     iframe {
-        background:transparent;
+        background: transparent;
     }
-
 </style>
 
 <body style="background-color: black;">
-    
-    <div class="map" style="border: 1px; float: left; width: 65%; margin-right:20px; margin-left:30px; margin-top: 120px;">
-    <iframe src="http://127.0.0.1:5601/app/dashboards#/view/3476b310-e889-11eb-a4ea-b90aa31194c5?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!t,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),hiddenLayers:!(d6c1e8e8-4a12-4198-a09f-83c44c0cc630,'41b04ca9-0f2a-4b3e-b59d-a97f8c15e397'),isLayerTOCOpen:!f,mapCenter:(lat:37.53748,lon:126.97586,zoom:10.23),openTOCDetails:!()),gridData:(h:18,i:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,w:48,x:0,y:0),id:e6a887c0-e834-11eb-8bee-63972f7f3f67,panelIndex:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,type:map,version:'7.11.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:c_bang_dash,viewMode:view)&hide-filter-bar=true" height="513px" width="100%" style="-webkit-transform:scale(1);-moz-transform-scale(1);" frameborder="0";></iframe>
-        <div class="mask"></div></div> 
 
-        <div style="border: 1px; float: left; width: 30%; margin-right:10px; margin-top: 112px;">
-            두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역두번째 영역
-        </div>        
+    <div class="map"
+        style="border: 1px; float: left; width: 65%; margin-right:30px; margin-left:30px; margin-top: 8%; margin-bottom: 8%">
+        <iframe src="http://127.0.0.1:5601/app/dashboards#/view/3476b310-e889-11eb-a4ea-b90aa31194c5?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!t,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),hiddenLayers:!(d6c1e8e8-4a12-4198-a09f-83c44c0cc630,'41b04ca9-0f2a-4b3e-b59d-a97f8c15e397'),isLayerTOCOpen:!f,mapCenter:(lat:37.53748,lon:126.97586,zoom:10.23),openTOCDetails:!()),gridData:(h:18,i:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,w:48,x:0,y:0),id:e6a887c0-e834-11eb-8bee-63972f7f3f67,panelIndex:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,type:map,version:'7.11.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:c_bang_dash,viewMode:view)&hide-filter-bar=true"
+            height="513px" width="100%" style="-webkit-transform:scale(1);-moz-transform-scale(1);" frameborder="0";></iframe>
+        <div></div>
+    </div>
+
+    <div style="border: 1px; float: left; width: 30%; margin-right:5px; margin-top: 8%; margin-bottom: 8%">
+        <form action="?">
+            <textarea name="memo" rows="20" cols="62" style="resize:none;">The cat was playing in the garden.</textarea>
+            <br><br>
+            <input type="submit">
+          </form>
+    </div>
 
 </body>
-</html>
 
+</html>

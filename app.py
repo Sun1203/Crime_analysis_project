@@ -29,7 +29,9 @@ def about1():
 def join():
     return render_template('join.html')
 
-
+@app.route('/map', methods=['GET'])
+def map():
+    return render_template('map.html')
 
 
 
