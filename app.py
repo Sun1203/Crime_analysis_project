@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 from flask_jwt_extended import *
-
+from memo import memo
 
 app = Flask(__name__)
 
@@ -32,6 +32,10 @@ def join():
 @app.route('/map', methods=['GET'])
 def map():
     return render_template('map.html')
+
+@app.route('/memo', methods=['POST'])
+def parse():
+    return memo()
 
 
 

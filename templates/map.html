@@ -8,7 +8,7 @@
     <title>C-Bang</title>
 </head>
 
-<style>    
+<style>
     div {
         color: aliceblue;
     }
@@ -21,19 +21,45 @@
 <body style="background-color: black;">
 
     <div class="map"
-        style="border: 1px; float: left; width: 65%; margin-right:30px; margin-left:30px; margin-top: 8%; margin-bottom: 8%">
-        <iframe src="http://127.0.0.1:5601/app/dashboards#/view/3476b310-e889-11eb-a4ea-b90aa31194c5?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!t,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),hiddenLayers:!(d6c1e8e8-4a12-4198-a09f-83c44c0cc630,'41b04ca9-0f2a-4b3e-b59d-a97f8c15e397'),isLayerTOCOpen:!f,mapCenter:(lat:37.53748,lon:126.97586,zoom:10.23),openTOCDetails:!()),gridData:(h:18,i:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,w:48,x:0,y:0),id:e6a887c0-e834-11eb-8bee-63972f7f3f67,panelIndex:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,type:map,version:'7.11.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:c_bang_dash,viewMode:view)&hide-filter-bar=true"
-            height="513px" width="100%" style="-webkit-transform:scale(1);-moz-transform-scale(1);" frameborder="0";></iframe>
+        style="border: 1px; float: left; width: 65%; margin-right:30px; margin-left:30px; margin-top: 5%; margin-bottom: 8%">
+        <!-- <iframe id="frameMap"
+            src="http://127.0.0.1:5601/app/dashboards#/view/3476b310-e889-11eb-a4ea-b90aa31194c5?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!t,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),hiddenLayers:!(d6c1e8e8-4a12-4198-a09f-83c44c0cc630,'41b04ca9-0f2a-4b3e-b59d-a97f8c15e397'),isLayerTOCOpen:!f,mapCenter:(lat:37.53748,lon:126.97586,zoom:10.23),openTOCDetails:!()),gridData:(h:18,i:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,w:48,x:0,y:0),id:e6a887c0-e834-11eb-8bee-63972f7f3f67,panelIndex:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,type:map,version:'7.11.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:c_bang_dash,viewMode:view)&hide-filter-bar=true"
+            height="513px" width="100%" frameborder="0" ;></iframe> -->
+        <iframe
+            src="http://127.0.0.1:5601/app/dashboards#/view/3476b310-e889-11eb-a4ea-b90aa31194c5?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!t,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),hiddenLayers:!(d6c1e8e8-4a12-4198-a09f-83c44c0cc630,'41b04ca9-0f2a-4b3e-b59d-a97f8c15e397',f96a8597-9597-4dbe-96d5-e6487818d85f,b2cd61de-9ae1-4a77-b7b4-fb2ac5d932fc),isLayerTOCOpen:!f,mapCenter:(lat:37.53239,lon:126.97236,zoom:10.23),openTOCDetails:!()),gridData:(h:18,i:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,w:48,x:0,y:0),id:e6a887c0-e834-11eb-8bee-63972f7f3f67,panelIndex:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,type:map,version:'7.11.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:c_bang_dash,viewMode:view)&hide-filter-bar=true"
+            height="513px" width="100%" frameborder="0";></iframe>
         <div></div>
     </div>
 
-    <div style="border: 1px; float: left; width: 30%; margin-right:5px; margin-top: 8%; margin-bottom: 8%">
+    <div style="border: 1px; float: left; width: 30%; margin-right:5px; margin-top: 5%; margin-bottom: 8%">
         <form action="?">
-            <textarea name="memo" rows="20" cols="62" style="resize:none;">The cat was playing in the garden.</textarea>
+            <textarea id="memo" rows="20" cols="62" style="resize:none;"></textarea>
             <br><br>
-            <input type="submit">
-          </form>
+        </form>
+        <button onclick="memo()">asdfasdfasdf</button>
     </div>
+
+    <script>
+
+        function memo() {
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+
+                if (this.readyState == 4 && this.status == 200) {
+                    // data = this.responseText;
+                    data = JSON.parse(data);
+
+                    document.getElementById("memo").value = data;
+
+                }
+            }
+            xhttp.open("POST", "memo");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send();
+        }
+
+    </script>
 
 </body>
 
