@@ -2,8 +2,8 @@
 
 <br>
 
-범죄 ("***C***"rime) 가득한 세상에서 방 ("***Bang***") 찾기 서비스 <br>
-***C - Bang !***
+범죄("***C***"rime) 가득한 세상에서 안전한 방("***Bang***") 찾기 서비스 <br>
+~~C - Bang~~
 
 ### BRANCH > [PCH](https://github.com/Sun1203/Crime_analysis_project/tree/PCH)
 
@@ -31,4 +31,4 @@
 
 - 20210720 작업내용
    > app.py 및 map.html 구성
-
+   > index.html merge
