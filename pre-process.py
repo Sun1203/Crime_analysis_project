@@ -32,7 +32,7 @@ class data:
         df.loc[df['통계년도']=='2018년', '통계년도']='2018-01-01'
         df.loc[df['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df.to_csv("./dataset/crime_circumstance.csv", index=False)
+        # df.to_csv("./dataset/crime_circumstance.csv", index=False)
 
         # 범죄 검거까지 기간 데이터 정제
 
@@ -65,7 +65,7 @@ class data:
         df1.loc[df1['통계년도']=='2019년', '통계년도']='2019-01-01'
 
 
-        df1.to_csv("./dataset/crime_duringday.csv", index=False)
+        # df1.to_csv("./dataset/crime_duringday.csv", index=False)
 
 
         # 범죄자의 금전소비 용도 데이터 정제
@@ -89,7 +89,7 @@ class data:
         df2.loc[df2['통계년도']=='2018년', '통계년도']='2018-01-01'
         df2.loc[df2['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df2.to_csv("./dataset/crime_money.csv", index=False)
+        # df2.to_csv("./dataset/crime_money.csv", index=False)
 
 
 
@@ -139,7 +139,7 @@ class data:
         df3.loc[df3['통계년도']=='2019년', '통계년도']='2019-01-01'
 
 
-        df3.to_csv("./dataset/crime_mental.csv", index=False)
+        # df3.to_csv("./dataset/crime_mental.csv", index=False)
 
 
         # 범죄자 성별 데이터 정제
@@ -163,7 +163,7 @@ class data:
         df4.loc[df4['통계년도']=='2019년', '통계년도']='2019-01-01'
         
 
-        df4.to_csv("./dataset/crime_sex.csv", index=False)
+        # df4.to_csv("./dataset/crime_sex.csv", index=False)
 
 
         # 범죄자 전과 정보 데이터 정제
@@ -187,7 +187,7 @@ class data:
         df5.loc[df5['통계년도']=='2018년', '통계년도']='2018-01-01'
         df5.loc[df5['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df5.to_csv("./dataset/crime_conviction.csv", index=False)
+        # df5.to_csv("./dataset/crime_conviction.csv", index=False)
 
 
         # 피해자 연령 데이터 정제
@@ -246,7 +246,7 @@ class data:
         df6.loc[df6['통계년도']=='2019년', '통계년도']='2019-01-01'
 
 
-        df6.to_csv("./dataset/crime_age.csv", index=False)
+        # df6.to_csv("./dataset/crime_age.csv", index=False)
         
 
         # 범죄자와 피해자의 관계 데이터 정제
@@ -269,7 +269,7 @@ class data:
         df7.loc[df7['통계년도']=='2019년', '통계년도']='2019-01-01'
 
 
-        df7.to_csv("./dataset/crime_relation.csv", index=False)
+        # df7.to_csv("./dataset/crime_relation.csv", index=False)
 
 
 
@@ -291,7 +291,7 @@ class data:
         df8.loc[df8['통계년도']=='2018년', '통계년도']='2018-01-01'
         df8.loc[df8['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df8.to_csv("./dataset/crime_time.csv", index=False)
+        # df8.to_csv("./dataset/crime_time.csv", index=False)
 
 
         # 범죄발생 장소 데이터 정제
@@ -311,6 +311,40 @@ class data:
         df9.loc[df9['통계년도']=='2018년', '통계년도']='2018-01-01'
         df9.loc[df9['통계년도']=='2019년', '통계년도']='2019-01-01'
 
-        df9.to_csv("./dataset/crime_place.csv", index=False)
+        # df9.to_csv("./dataset/crime_place.csv", index=False)
+
+
+        # 범죄 관련 책 정제
+
+        df10 = pd.read_csv("./dataset/범최책.csv", encoding='euc-kr', thousands=',')
+
+        del df10["편/권차"]
+        del df10["낱권 ISBN"]
+        del df10["낱권 부가기호"]
+        del df10["세트 ISBN"]
+        del df10["세트 부가기호"]
+        del df10["CIP 제어번호"]
+        del df10["판차"]
+        del df10["총서 표제"]
+        del df10["총서 편차"]
+        del df10["한국십진분류"]
+        del df10["듀이십진분류"]
+        del df10["납본여부"]
+        del df10["출판사홈페이지"]
+
+        df10.columns = ['책제목', '저자', '가격', '발행일', '발행처']
+
+        df10["가격"] = df10["가격"].apply(lambda x: x.replace(',', ''))
+
+        df10 = df10[df10.가격 != "연재가"]
+        df10 = df10[df10.가격 != "세트가미정"]
+        df10 = df10[df10.가격 != "비매품/무료"]
+
+        df10['가격'] = df10['가격'].astype(int)
+        df10['발행일'] = df10['발행일'].astype(str)
+
+
+        df10.to_csv("./dataset/crime_book.csv", index=False, header=False)
+
 
     process()
