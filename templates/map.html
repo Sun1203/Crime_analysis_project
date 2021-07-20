@@ -25,18 +25,22 @@
         <!-- <iframe id="frameMap"
             src="http://127.0.0.1:5601/app/dashboards#/view/3476b310-e889-11eb-a4ea-b90aa31194c5?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!t,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),hiddenLayers:!(d6c1e8e8-4a12-4198-a09f-83c44c0cc630,'41b04ca9-0f2a-4b3e-b59d-a97f8c15e397'),isLayerTOCOpen:!f,mapCenter:(lat:37.53748,lon:126.97586,zoom:10.23),openTOCDetails:!()),gridData:(h:18,i:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,w:48,x:0,y:0),id:e6a887c0-e834-11eb-8bee-63972f7f3f67,panelIndex:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,type:map,version:'7.11.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:c_bang_dash,viewMode:view)&hide-filter-bar=true"
             height="513px" width="100%" frameborder="0" ;></iframe> -->
-        <iframe
+        <!-- <iframe
             src="http://127.0.0.1:5601/app/dashboards#/view/3476b310-e889-11eb-a4ea-b90aa31194c5?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!t,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),hiddenLayers:!(d6c1e8e8-4a12-4198-a09f-83c44c0cc630,'41b04ca9-0f2a-4b3e-b59d-a97f8c15e397',f96a8597-9597-4dbe-96d5-e6487818d85f,b2cd61de-9ae1-4a77-b7b4-fb2ac5d932fc),isLayerTOCOpen:!f,mapCenter:(lat:37.53239,lon:126.97236,zoom:10.23),openTOCDetails:!()),gridData:(h:18,i:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,w:48,x:0,y:0),id:e6a887c0-e834-11eb-8bee-63972f7f3f67,panelIndex:ec57fa60-bc85-48cb-b386-c3f9dfac97d2,type:map,version:'7.11.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:c_bang_dash,viewMode:view)&hide-filter-bar=true"
-            height="513px" width="100%" frameborder="0";></iframe>
+            height="513px" width="100%" frameborder="0" ;></iframe> -->
+        <iframe
+            src="http://127.0.0.1:5601/app/dashboards#/view/91e03310-e95a-11eb-846e-13290531a80f?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2012-07-20T00:37:31.516Z',to:'2021-07-20T00:52:31.516Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(enhancements:(),hiddenLayers:!(f6053fe0-0a42-4d40-bcfa-93cd4ea6d2be,'1ff708fd-624c-4b4e-8d8d-df0ec561f579',dfe505c6-b216-4dee-ae8e-6b431794df59,a6214c89-125a-4cb0-aa0d-5957325c7e84),isLayerTOCOpen:!f,mapCenter:(lat:37.54713,lon:126.96332,zoom:9.87),openTOCDetails:!()),gridData:(h:17,i:'964ceccd-8b2d-4794-a65d-26776f0d21de',w:48,x:0,y:0),id:'9d9e7910-e931-11eb-846e-13290531a80f',panelIndex:'964ceccd-8b2d-4794-a65d-26776f0d21de',type:map,version:'7.11.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:C_Bang,viewMode:view)&hide-filter-bar=true"
+            height="513px" width="100%" frameborder="0" ;></iframe>
         <div></div>
     </div>
 
     <div style="border: 1px; float: left; width: 30%; margin-right:5px; margin-top: 5%; margin-bottom: 8%">
         <form action="?">
-            <textarea id="memo" rows="20" cols="62" style="resize:none;"></textarea>
+            <textarea id="memo" rows="30" cols="62"
+                style="resize:none;">버튼 클릭시 현재 클릭된 방 정보가 textarea에 입력되고 export할 수 있도록 구현 하려 했으나 싫퓨ㅐ</textarea>
             <br><br>
         </form>
-        <button onclick="memo()">asdfasdfasdf</button>
+        <button onclick="memo()" style="width:80px; height:33px;">즐겨찾기</button>
     </div>
 
     <script>
