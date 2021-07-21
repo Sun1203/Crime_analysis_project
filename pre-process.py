@@ -344,6 +344,16 @@ class data:
         df10['발행일'] = df10['발행일'].astype(str)
 
 
+        df10["책제목"] = df10["책제목"].apply(lambda x: x.replace(',', ''))
+        df10["책제목"] = df10["책제목"].apply(lambda x: x.replace('""', ''))
+        df10["저자"] = df10["저자"].apply(lambda x: x.replace(',', ''))
+        df10["저자"] = df10["저자"].apply(lambda x: x.replace('""', ''))
+        df10["발행처"] = df10["발행처"].apply(lambda x: x.replace(',', ''))
+        df10["발행처"] = df10["발행처"].apply(lambda x: x.replace('""', ''))
+
+
+        df10 = df10.head(100)
+
         df10.to_csv("./dataset/crime_book.csv", index=False, header=False)
 
 
