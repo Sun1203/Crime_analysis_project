@@ -47,7 +47,7 @@
 4. Flask
    - _시각화된 결과물을 kibana dashboard로 정리 후 html 코드로 변환하여 웹페이지로 제작_<br>
    - _회원가입 기능, 로그인기능(jwt) 구현_
-   - _elasticsearch에서 mapping, analizer(nori), tokenizer 설정후 파이프라인으로 구축한 데이터를 넣고 플라스크에서 검색기능 구현__<br><br>
+   - _토크나이저는 한글 형태소분석기인 노리(nori) 형태소 분석기를 이용했고, 자동완성 구현을 위해 edge_ngram filter를 이용하였다_<br><br>
    ```
         const $app = document.getElementById('App')
 
