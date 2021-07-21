@@ -33,14 +33,15 @@
    - _크롤링과 csv파일 갱신을 동시에 진행하여 ElasticSearch로 실시간으로 데이터가 삽입되도록 계획_<br>
    - _위도와 경도는 ES의 geo_point 타입으로 사용하기 위해 파이프라인 구축 전 미리 dev tools에서 geo_point 타입으로 맵핑_
    
-<p align="center"><a href='https://ifh.cc/v-6JDIUF' target='_blank'><img src='https://ifh.cc/g/6JDIUF.gif' border='0'></a><a href="https://ibb.co/VgvwKc1"><img src="https://i.ibb.co/m9HNxVj/image.png" alt="image" border="0" height="300px" width="600px"></a><br><p><br>
+<p align="center"><a href='https://ifh.cc/v-6JDIUF' target='_blank'><img src='https://ifh.cc/g/6JDIUF.gif' border='0'></a><br><br>
+   <a href="https://ibb.co/VgvwKc1"><img src="https://i.ibb.co/m9HNxVj/image.png" alt="image" border="0" height="300px" width="600px"></a><br><p><br>
 
 3. 시각화
    - _geo_point 타입으로 맵핑된 데이터를 통해 kibana maps에 시각화_<br>
    - _부여한 보안점수별로 구간(등급)을 나눠 사용자가 필터링할 수 있도록 계획_<br>
    - _매물별 URL을 하이퍼링크타입으로 변환하여 맵핑된 지도와 부동산매물사이트 연계_<br>
    - _범죄 발생건수, 검거율, 검거기간 등 연관있는 데이터들로 kibana 시각화후 대시보드에 합침_<br>
-<p align="center"><a href='https://ifh.cc/v-wVAq9r' target='_blank'><img src='https://ifh.cc/g/wVAq9r.gif' border='0' height="400px" width="600px"></a></p>
+<p align="center"><a href='https://ifh.cc/v-wVAq9r' target='_blank'><img src='https://ifh.cc/g/wVAq9r.gif' border='0' width="800px"></a></p><br>
    
 
 4. Flask
