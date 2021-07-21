@@ -31,7 +31,7 @@
    
 2. 파이프라인 구축
    - _크롤링과 csv파일 갱신을 동시에 진행하여 ElasticSearch로 실시간으로 데이터가 삽입되도록 계획_<br>
-   - _위도와 경도는 ES의 geo_point 타입으로 사용하기 위해 파이프라인 구축 전 미리 dev tools에서 geo_point 타입으로 맵핑_
+   - _위도와 경도를 ES의 geo_point 타입으로 사용하기 위해 파이프라인 구축 전 dev tools에서 location 필드를 geo_point 타입으로 맵핑_
    
 <p align="center"><a href='https://ifh.cc/v-6JDIUF' target='_blank'><img src='https://ifh.cc/g/6JDIUF.gif' border='0'></a><br><br>
    <a href="https://ibb.co/VgvwKc1"><img src="https://i.ibb.co/m9HNxVj/image.png" alt="image" border="0" height="300px" width="600px"></a><br><p><br>
@@ -64,3 +64,13 @@
          })
      })
      ```
+
+<br>
+
+5. 파일별 기능 개요
+   - _pre-preocess.py : CCJS 데이터 전처리 및 데이터프레임 생성_ 
+   - _Elk_python.py   : ElasticSearch와 python을 연결하고 쿼리 작성_ 
+   - _peterpan.py     : 피터팬의 좋은방 구하기 크롤러_ 
+   - _dto.py          : 각 컬럼항목 저장 및 컬럼을 하나의 클래스에 매칭_
+   - _Db_dao.py       : dto.py에 정보 저장_
+   
