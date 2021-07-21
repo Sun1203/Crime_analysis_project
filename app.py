@@ -20,11 +20,16 @@ jwt=JWTManager(app)
 def index():
     if request.method=="GET":
         return render_template('index.html')
-    else:
+    elif request.method == "POST":
         data = book(request.form.get("id"))
         data = jsonify(data)
         print(type(data))
         return data
+
+@app.route('/info2', methods=['POST'])
+def about2():
+    data1 = info()
+    return jsonify(data1)
 
 
 @app.route('/info', methods=['GET', 'POST'])
