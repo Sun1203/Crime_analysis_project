@@ -23,16 +23,17 @@ class InfoDAO:
 
 
 
-    def login(self,dto):
+    def login(self, dto):
         data = ''
         try:
             conn = cx_Oracle.connect(user="SCOTT", password="TIGER", dsn="xe")
             cur = conn.cursor()
             try:
-                cur.execute("select userpw from userjoin where nid=:nid, npw=:npw", nid=dto.getNid(), npw = dto.getNpw()) 
+                cur.execute("select userpw, userid from userjoin where nid=:nid, npw=:npw", nid=dto.getNid(), npw = dto.getNpw()) 
                 row = cur.fetchone()
                 print(row, "_______1")
                 data = '{"userpw":"' + row[0] + '"}'
+                
                 print(data,"___________2")
                 
             except Exception as e:

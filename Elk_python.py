@@ -47,4 +47,16 @@ def book(js):
     # print(data)
 
     return data
-# book("")
+def info():
+
+    res = es.search(index="info", body={
+        "query" : {
+            "match_all" : {}
+        }
+    })
+    data = res['hits']['hits']
+
+    print(data)
+    return data
+info()       
+    
