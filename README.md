@@ -71,5 +71,5 @@
    - _Elk_python.py   : ElasticSearch와 python을 연결하고 쿼리 작성_ 
    - _peterpan.py     : 피터팬의 좋은방 구하기 크롤러_ 
    - _dto.py          : 각 컬럼항목 저장 및 컬럼을 하나의 클래스에 매칭_
-   - _Db_dao.py       : dto.py에 정보 저장_
+   - _Db_dao.py       : dto.py에 정보 저장_.
    
